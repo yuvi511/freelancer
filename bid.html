@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place a Bid</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .page-title {
+            font-size: 28px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 6px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Place a Bid</h1>
+        
+        <form>
+            <div class="form-group">
+                <label for="bidTitle" class="form-label">Bid Title</label>
+                <input type="text" class="form-control" id="bidTitle" placeholder="Enter bid title">
+            </div>
+            
+            <div class="form-group">
+                <label for="bidDetails" class="form-label">Bid Details</label>
+                <textarea class="form-control" id="bidDetails" rows="5" placeholder="Enter bid details"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="bidDescription" class="form-label">Proposal</label>
+                <textarea class="form-control" id="bidDescription" rows="5" placeholder="Describe your proposal"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="bidAmount" class="form-label">Bid Amount (INR)</label>
+                <input type="number" class="form-control" id="bidAmount" placeholder="Enter bid amount">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Payment Type</label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="bidPaymentType" value="hourly" checked> Hourly Rate
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="bidPaymentType" value="fixed"> Fixed Price
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit Bid</button>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

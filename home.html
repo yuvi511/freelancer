@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFC Freelance Marketplace</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #333;
+            padding: 10px 0;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .cfc-text-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: text-decoration 0.5s, color 0.3s, transform 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #6db3f2;
+            transition: width 0.3s;
+        }
+        .nav-link:hover {
+            color: #6db3f2;
+            transform: translateY(-2px);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .slideshow {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            
+        }
+
+        .slideshow-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: none;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .slideshow-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slideshow-content {
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+
+<!-- Header -->
+<div class="header">
+    <div class="container">
+        <div class="header-left">
+            <a class="navbar-brand cfc-text-logo" href="#">CFC Freelance</a>
+        </div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a class="nav-link animate__animated animate__fadeIn" href="#">How It Works</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link animate__animated animate__fadeIn" href="#">Browse Jobs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link animate__animated animate__fadeIn" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link animate__animated animate__fadeIn" href="#">Signup</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link animate__animated animate__fadeIn" href="#">Post a Project</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<section class="slideshow-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="slideshow animate__animated animate__fadeInRight">
+                   
+                    <img id="slideshowImage" class="slideshow-image" src="images/image1.jpg" alt="Image 1">
+                    <div class="slideshow-overlay">
+                        <div class="slideshow-content animate__animated animate__fadeInLeft">
+                            <h2 style="color: white; font-weight: bold;">Hire the best freelancers for any job</h2>
+                            <ul class="bullets" style="color: white;">
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                <li>Nulla varius nunc in bibendum fringilla.</li>
+                                <li>Sed tincidunt nulla at tincidunt bibendum.</li>
+                                <li>Aliquam et nisl at justo efficitur venenatis.</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary btn-lg">Hire a Freelancer</a>
+                            <a href="#" class="btn btn-secondary btn-lg">Earn Money Freelancing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const slideshowImages = ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg", "images/image4.jpg", "images/image5.jpg"];
+    const slideshowImage = document.getElementById("slideshowImage");
+    const slideshowOverlay = document.querySelector(".slideshow-overlay");
+    let currentImageIndex = 0;
+
+    function changeImage() {
+        slideshowImage.src = slideshowImages[currentImageIndex];
+        currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+    }
+
+    const slideshowInterval = setInterval(changeImage, 3000);
+
+    // Stop the slideshow when the page is not visible
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            clearInterval(slideshowInterval);
+        } else {
+            slideshowInterval = setInterval(changeImage, 3000);
+        }
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Project</title>
+    <!-- Include Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .page-title {
+            font-size: 28px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 6px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .dotted-box {
+            border: 2px dashed #007bff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .attach-files {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .drag-drop {
+            color: #aaa;
+            margin-top: 5px;
+        }
+
+        .skills-container {
+            margin-bottom: 20px;
+        }
+
+        .skill-oval {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 16px;
+            padding: 6px 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .payment-btn-group .btn {
+            border-radius: 6px;
+        }
+
+        .payment-btn-group .btn.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Tell us what you need done</h1>
+        
+        <form>
+            <div class="form-group">
+                <label for="projectTitle" class="form-label">Project Title</label>
+                <input type="text" class="form-control" id="projectTitle" placeholder="Enter project title">
+            </div>
+            
+            <div class="form-group">
+                <label for="projectDescription" class="form-label">Project Description</label>
+                <textarea class="form-control" id="projectDescription" rows="5" placeholder="Enter project description"></textarea>
+            </div>
+            
+            <div class="dotted-box">
+                <label for="attachFiles" class="attach-files">Attach Files</label>
+                <input type="file" class="form-control-file" id="attachFiles" multiple>
+                <small class="form-text text-muted drag-drop">Drag and Drop Images or Documents that might be helpful</small>
+            </div>
+            
+            <div class="form-group skills-container">
+                <label for="skills" class="form-label">Skills Required</label>
+                <div class="d-flex flex-wrap align-items-center" id="skillsContainer">
+                    <!-- Skills will be added dynamically -->
+                </div>
+                <div class="input-group mt-2">
+                    <input type="text" class="form-control" id="newSkill" placeholder="Add new skill">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-primary" id="addSkillBtn">Add Skill</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group payment-btn-group">
+                <label class="form-label">Payment Type</label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="paymentType" value="hourly" checked> Pay by Hour
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="paymentType" value="fixed"> Pay Fixed Price
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Post Project</button>
+        </form>
+    </div>
+    
+    <!-- Include Bootstrap JS scripts here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillsContainer = document.getElementById('skillsContainer');
+            const addSkillBtn = document.getElementById('addSkillBtn');
+            const newSkillInput = document.getElementById('newSkill');
+            
+            addSkillBtn.addEventListener('click', function() {
+                const skillName = newSkillInput.value.trim();
+                if (skillName !== '') {
+                    const skillOval = document.createElement('div');
+                    skillOval.classList.add('skill-oval', 'mr-2', 'mb-2');
+                    skillOval.textContent = skillName;
+                    skillsContainer.appendChild(skillOval);
+                    newSkillInput.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

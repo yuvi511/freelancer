@@ -1,0 +1,233 @@
+<!--<!DOCTYPE html>-->
+<!--<html-- lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employer Registration</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    .card{
+        font-family: 'Open Sans', sans-serif;
+        font-size:large;
+    }
+  </style>
+  
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <a href="#" class="logo">
+        <img src="path/to/cfc-logo.png" alt="CFC Logo">
+    </a>
+  <div class="container mt-4 grid-container">
+    <div class="card">
+      <div class="card-header">
+        
+        <h4 id = "title">Sign up To Find Work You Love</h4>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="workEmail" class="form-label">Email Address</label>
+            <textarea class="form-control" id="workEmail" name="workEmail" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password (8 or more characters)</label>
+            <input type="password" class="form-control" id="password" name="password" minlength="8" required>
+          </div>
+          <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <select class="form-select" id="country" name="country" required>
+              <option value="">Select Country</option>
+              <option value="USA">USA</option>
+              <option value="Canada">Canada</option>
+              
+            </select>
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="termsAgreement" name="termsAgreement" required>
+            <label class="form-check-label" for="termsAgreement">Yes, I understand the terms and agreement and agree to it.</label>
+          </div>
+         
+          <button type="submit" class="btn-neon-blue btn-cylindrical">Sign Up</button>
+
+          Already have an account? <a href="#" class="neon-anchor">Sign In</a>
+
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Registration</title>
+    <!-- Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 30px;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-control {
+            border-radius: 6px;
+        }
+
+        .btn-cylindrical {
+            border-radius: 9999px;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            background-color: #91C8E4;
+            border: none;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-cylindrical:hover {
+            background-color: #6CA8D9;
+        }
+
+        .neon-anchor {
+            color: #00c3ff;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .neon-anchor::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #00c3ff;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .neon-anchor:hover::after {
+            transform: scaleX(1);
+        }
+
+        #title {
+            text-align: center;
+            margin: 12px;
+        }
+
+        /* Logo style */
+        .logo {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 9999;
+            margin-top: 30px;
+            margin-left: 10px;
+        }
+
+        .logo img {
+            width: 50px; /* Adjust the width and height as needed */
+            height: 50px;
+        }
+    </style>
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <a href="#" class="logo">
+        <img src="path/to/cfc-logo.png" alt="CFC Logo">
+    </a>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4 id="title">Sign up To Find Work You Love</h4>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="workEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="workEmail" name="workEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password (8 or more characters)</label>
+                        <input type="password" class="form-control" id="password" name="password" minlength="8" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <select class="form-select" id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            <option value="USA">USA</option>
+                            <option value="Canada">Canada</option>
+                            <!-- Add more countries as needed -->
+                        </select>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="termsAgreement" name="termsAgreement" required>
+                        <label class="form-check-label" for="termsAgreement">Yes, I understand the terms and agreement and agree to it.</label>
+                    </div>
+                    <!-- Submit button -->
+                    <button type="submit" class="btn-cylindrical">Sign Up</button>
+
+                    Already have an account? <a href="#" class="neon-anchor">Sign In</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and Popper.js links (required for Bootstrap functionality) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

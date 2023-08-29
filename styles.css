@@ -1,0 +1,84 @@
+/* Custom CSS styles */
+
+/* Logo style */
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 9999;
+    margin-top: 30px;
+    margin-left: 10px;
+  }
+  
+  .logo img {
+    width: 50px; /* Adjust the width and height as needed */
+    height: 50px;
+  }
+  
+  /* Custom styles for the submit button */
+  .btn-neon-blue {
+    background-color: #91C8E4;
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-cylindrical {
+    border-radius: 9999px;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  /* Hover effect */
+  .btn-neon-blue:hover {
+    background-color: #6CA8D9; /* Change the color to your desired effect */
+  }
+  
+  .card {
+    margin: 30px;
+    
+  }
+
+  .grid-container{
+    display: grid;
+    height: 100vh;
+    place-items: center;
+  }
+  
+
+  
+  
+  .text-white {
+    color: #fff;
+  }
+  
+  .neon-anchor {
+    color: #00c3ff;
+    text-decoration: none;
+    position: relative;
+    
+  }
+  
+  .neon-anchor::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #00c3ff;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  
+  .neon-anchor:hover::after {
+    transform: scaleX(1);
+  }
+
+#title{
+    text-align: center;
+    margin: 12px;
+}
